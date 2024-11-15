@@ -1,0 +1,186 @@
+﻿<Window x:Class="InformationSecurity.Views.JuryRegistrationWidnow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InformationSecurity.Views"
+        mc:Ignorable="d"
+        Title="Регистрация" 
+        Height="450" 
+        Width="800"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            FontSize="28"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            Margin="120 0 0 0">
+            Регистрация жюри/модератора
+        </TextBlock>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Orientation="Vertical"
+            HorizontalAlignment="Center">
+
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="0 0 0 10">
+                <TextBlock Text="Id Number:"
+                         Style="{StaticResource InputFieldHeaderJury}"/>
+                <TextBox Name="TxtBoxIdNumber" 
+                         FontSize="16"
+                         Width="175"
+                         Background="LightGray"
+                         FontStyle="Italic"
+                         Foreground="Black"
+                         TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="ФИО:"
+                          Style="{StaticResource InputFieldHeaderJury}"/>
+                <TextBox Name="TxtBoxFIO" 
+                         FontSize="16"
+                         Width="175"
+                         Foreground="Black"
+                         TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="0 0 0 10">
+                <TextBlock Text="Пол:"
+              Style="{StaticResource InputFieldHeaderJury}"/>
+                <ComboBox Name="CmbBoxGender" 
+                    FontSize="16"
+                    Width="175"
+                    Foreground="Black"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="0 0 0 10">
+                <TextBlock Text="Роль:"
+              Style="{StaticResource InputFieldHeaderJury}"/>
+                <ComboBox Name="CmbBoxRole" 
+                    FontSize="16"
+                    Width="175"
+                    Foreground="Black"/>
+            </StackPanel>
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="Email:"
+                          Style="{StaticResource InputFieldHeaderJury}"/>
+                <TextBox Name="TxtBoxEmail" 
+                         FontSize="16"
+                         Width="175"
+                         Foreground="Black"
+                         TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="Телефон:"
+                          Style="{StaticResource InputFieldHeaderJury}"/>
+                <TextBox Name="TxtBoxMobilePhone" 
+                         FontSize="16"
+                         Width="175"
+                         Foreground="Black"
+                         TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="Направление:"
+                     Style="{StaticResource InputFieldHeaderJury}"/>
+                <TextBox Name="TxtBoxDirecion" 
+                     FontSize="16"
+                     Width="175"
+                     Foreground="Black"
+                     TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Vertical">
+                <CheckBox
+                    HorizontalAlignment="Right"
+                    Margin="0 0 0 10"
+                    Name="ChkBoxEventVisible"
+                    Checked="ChkBoxEventVisible_Checked"
+                    Unchecked="ChkBoxEventVisible_Unchecked">
+                        Прикрепить к мероприятию
+                </CheckBox>
+                <StackPanel
+                    Name="StcPanelEvent"
+                    Orientation="Horizontal"
+                    Margin="0 0 0 4"
+                    Visibility="Hidden">
+            
+                    <TextBlock Text="Мероприятие:"
+                        Style="{StaticResource InputFieldHeaderJury}"/>
+                    <ComboBox Name="CmbBoxEvent" 
+                        FontSize="16"
+                        Width="175"
+                        Foreground="Black"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1">
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="Пароль:"
+                          Style="{StaticResource InputFieldHeaderJury}"
+                           Width="125"/>
+                <PasswordBox Name="TxtBoxPassword" 
+                         FontSize="16"
+                         Width="175"
+                         Foreground="Black"/>
+            </StackPanel>
+            <StackPanel
+                 Orientation="Horizontal"
+                 Margin="0 0 0 10">
+                <TextBlock Text="Повтор пароля:"
+                          Style="{StaticResource InputFieldHeaderJury}"
+                           Width="125"/>
+                <PasswordBox Name="TxtBoxPasswordRepeat" 
+                         FontSize="16"
+                         Width="175"
+                         Foreground="Black"/>
+            </StackPanel>
+
+            <Button
+               Name="BtnAdd"
+               Width="125"
+               Height="35"
+               FontSize="18"
+               HorizontalAlignment="Left"
+               Margin="20 0 0 0"
+               Click="BtnAdd_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+                Добавить
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,121 @@
+﻿<Window x:Class="InformationSecurity.Views.OrganizerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InformationSecurity.Views"
+        mc:Ignorable="d"
+        Title="Организатор" 
+        Height="450" 
+        Width="800"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Text="Окно организатора"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="0 10 0 0"
+            FontSize="24"
+            FontWeight="Bold"/>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Orientation="Vertical"
+            HorizontalAlignment="Center">
+            <Image Width="150"
+               Height="205"
+               HorizontalAlignment="Left"
+               Margin="5"
+               Source="..\Resourses\unnamed.png">
+                <!--<Image.Source>
+                    <Binding Path="Photo">
+                        <Binding.TargetNullValue>
+                            <ImageSource>..\Resourses\unnamed.png</ImageSource>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>-->
+            </Image>
+
+            <Button
+                Background="White"
+                Width="145"
+                Height="70">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <TextBlock
+                    Margin="3"
+                    Text="Мой профиль"
+                    TextWrapping="Wrap"
+                    FontSize="22"
+                    TextAlignment="Center"/>
+            </Button>
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5"
+            Orientation="Vertical">
+            <TextBlock
+                Name="TxtBlockGoodDay"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"/>
+
+            <Button
+                Style="{StaticResource ButtonOrganizer}"
+                Margin="0 10 0 10">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <TextBlock
+                    Text="Меропирятие"
+                    FontSize="20"/>
+            </Button>
+            <Button
+                Style="{StaticResource ButtonOrganizer}"
+                Margin="0 0 0 10">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <TextBlock
+                    Text="Участники"
+                    FontSize="20"/>
+            </Button>
+            <Button
+                Name="JuryButton"
+                Style="{StaticResource ButtonOrganizer}"
+                Click="JuryButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <TextBlock
+                    Text="Жюри"
+                    FontSize="20"/>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
